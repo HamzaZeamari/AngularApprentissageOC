@@ -1,0 +1,16 @@
+<div class="face-snap-card" [ngClass]="{ snapped : textSnap !== 'Oh Snap !' }">
+    <h1>Je ne lache rien dans le Angular</h1>
+    <p>Nombre {{ 4546456465.315 | number : '1.0-0' }}</p>
+    <p>Pourcentage {{ 0.966 | percent : '1.0-1' }}</p>
+    <p>Montant {{ 5021.25 | currency:'EUR' : 'code' }}</p>
+
+    <p>
+        <button (click)="OnAddSnap()">{{ textSnap }}</button>
+        <span [ngStyle]="{ color: 'rgb(0,' + snap + ',0)' }"> 🤌 {{ snap }} </span>
+    </p>
+    <p *ngIf="facesnap.location">Localisation de la photo à {{facesnap.location}}</p>
+    <h2>{{facesnap.title | titlecase}}</h2>
+    <p>par {{facesnap.auteur}}</p>
+    <p>{{ facesnap.datePub | date : "longDate" }}</p>
+    <img [src]="facesnap.image" [alt]="facesnap.title">
+</div>

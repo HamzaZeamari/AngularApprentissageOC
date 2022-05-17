@@ -1,0 +1,6 @@
+<div class="face-snap-card" [ngClass]="{ snapped : textSnap !== 'Oh Snap !' }">
+    <h2>{{facesnap.title | titlecase}}</h2>
+    <p>par {{facesnap.auteur}}</p>
+    <p>{{ facesnap.datePub | date : "longDate" }}</p>
+    <a (click)="OnViewShow()">View</a>
+</div>
